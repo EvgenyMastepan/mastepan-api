@@ -6,8 +6,16 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/index.html"
     }
   ]
 }
