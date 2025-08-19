@@ -1,0 +1,720 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Книги Мастепан О.Е.</title>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0 auto;
+			padding: 0;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			background-image: url('images/Back.jpg');
+		}
+
+		#title1 {
+			text-align: center;
+			font-family: "Arial Black";
+			color: white;
+			margin: 0;
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			font-size: 3.2em;
+			text-shadow: rgb(0, 0, 0) 1px 0 10px;
+		}
+
+		#title2 {
+			text-align: center;
+			font-family: "Arial Black";
+			color: white;
+			margin: 0;
+			position: absolute;
+			top: 52%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			font-size: 2.5em;
+			text-shadow: rgb(0, 0, 0) 1px 0 10px;
+		}
+
+		.title {
+			text-align: center;
+			font-family: "Arial Black";
+			font-size: 2.5em;
+		}
+
+		#titleRev {
+			text-align: center;
+			font-family: "Arial Black";
+			font-size: 2.5em;
+			margin-bottom: -5px;
+			padding-top: 2em;
+		}
+
+		p {
+			margin-top: 0;
+			margin-bottom: 0.5em;
+		}
+
+		#books {
+			table-layout: fixed;
+		}
+
+		#books td {
+			width: 20%;
+		}
+
+		.styled {
+			display: block;
+			margin: 0;
+			position: absolute;
+			top: 62%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			border: 0;
+			line-height: 3;
+			padding: 0 20px;
+			font-size: 1rem;
+			text-align: center;
+			color: black;
+			border-radius: 10px;
+			background-color: white;
+			font-family: "Arial Black";
+		}
+
+		.styled:hover {
+			background-color: rgb(213, 167, 255);
+		}
+
+		#main_frame {
+			width: 100vw;
+			height: 100vh;
+			background-image: url('images/Space.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100% 100%;
+		}
+
+		.book_title {
+			text-align: center;
+			font-family: "Arial Black";
+			font-size: 1.5em;
+		}
+
+		.genre {
+			font-size: 1.2em;
+			text-align: center;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+		}
+
+		.description {
+			padding-left: 1em;
+			padding-right: 1em;
+			text-align: justify;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			font-size: 1em;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+		}
+
+		.author_name {
+			text-align: left;
+			font-family: "Arial Black";
+			font-size: 1.5em;
+			padding-left: 0.5em;
+		}
+
+		#author_photo {
+			width: 100%;
+			border-radius: 50%;
+		}
+
+		#author_table {
+			padding-right: 1em;
+		}
+
+		#photo_table {
+			width: 35%;
+		}
+
+		li {
+			padding-bottom: 0.5em;
+		}
+
+		ul {
+			margin-left: 20px;
+		}
+
+		.bubble_text {
+			border: 2px solid;
+			border-radius: 10px;
+			border-color: black;
+			background-color: #fff;
+			font-size: 1.2em;
+			text-align: center;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			padding: 1em;
+		}
+
+		#rewards_table {
+			table-layout: fixed;
+		}
+
+		#rewards_table th {
+			width: 50%;
+			padding-left: 3em;
+			padding-right: 3em;
+		}
+
+		#rewards_table td {
+			width: 50%;
+			padding-left: 3em;
+			padding-right: 3em;
+			margin: auto;
+			text-align: center;
+		}
+
+		#review_table {
+			table-layout: fixed;
+		}
+
+		#review_table td {
+			width: 50%;
+			padding-left: 1em;
+			padding-right: 1em;
+			margin: auto;
+			text-align: center;
+		}
+
+		.review_img {
+			width: 80%;
+			height: 80%;
+			padding-top: 1em;
+			border: 2px solid;
+		}
+
+		#shop {
+			padding-bottom: 2em;
+		}
+
+		#shop_table {
+			table-layout: fixed;
+			width: 100%;
+			text-align: center;
+			margin: auto;
+		}
+
+		#shop_table th {
+			width: 33%;
+			padding-left: 1em;
+			padding-right: 1em;
+
+		}
+
+		.shop_pic {
+			width: 100px;
+			height: 100px;
+		}
+
+		.shop_white {
+			border: 2px solid;
+			border-radius: 10px;
+			border-color: black;
+			line-height: 3;
+			padding: 0 20px;
+			font-size: 1rem;
+			text-align: center;
+			color: black;
+			background-color: white;
+			font-family: "Arial Black";
+		}
+
+		.shop_white:hover {
+			background-color: rgb(213, 167, 255);
+		}
+
+		#shop_purple {
+			border: 2px solid;
+			border-radius: 10px;
+			border-color: black;
+			line-height: 3;
+			padding: 0 20px;
+			font-size: 1rem;
+			text-align: center;
+			color: black;
+			border-radius: 10px;
+			background-color: rgb(213, 167, 255);
+			font-family: "Arial Black";
+		}
+
+		#shop_purple:hover {
+			background-color: rgb(152, 126, 255);
+		}
+
+		.shop_block {
+			border: 2px solid;
+			border-radius: 50px;
+			border-color: black;
+			background-color: #fff;
+			font-size: 1.2em;
+			text-align: center;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			padding: 1em;
+			height: 22em;
+		}
+
+		#shop_shadow {
+			box-shadow: 0 0 5px 10px rgb(213, 167, 255);
+			;
+		}
+
+		.relative_button {
+			padding-top: 0.5em;
+			padding-bottom: 1em;
+		}
+
+		#form_purple {
+			padding-top: 2.3em;
+		}
+
+		#form_white {
+			padding-top: 0.5em;
+		}
+
+		.menu {
+			z-index: 1;
+			margin: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			width: 100%;
+			display: table;
+		}
+
+		.menu ul {
+			display: table-row;
+		}
+
+		.menu li {
+			display: table-cell;
+			background: black;
+		}
+
+		.menu ul li:hover,
+		.menu a:hover {
+			background: #666;
+		}
+
+		.menu li a {
+			display: block;
+			padding: 20px 15px;
+			color: white;
+			text-align: center;
+			font-family: "Arial Black";
+			text-decoration: none;
+			font-size: 1.5em;
+		}
+
+		#social-icons {
+			display: flex;
+			justify-content: center;
+		}
+
+		#social-icons a {
+			margin-bottom: 10px;
+			margin-top: -10px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		#social-icons img {
+			width: 50px;
+			height: 50px;
+			transition: transform 0.3s;
+		}
+
+		#social-icons a:hover img {
+			transform: scale(1.2);
+		}
+
+		.center-con {
+			display: flex;
+			height: 90vh;
+			align-items: flex-end;
+			justify-content: center;
+		}
+
+		.round {
+			position: relative;
+			border: 3px solid #fff;
+			width: 100px;
+			height: 100px;
+			border-radius: 100%;
+		}
+
+		span {
+			z-index: 999;
+			height: 3px;
+			margin: 1px;
+			width: 30px;
+			background: #fff;
+			transition: 0.4s ease;
+		}
+
+		span:first-child {
+			display: block;
+			position: absolute;
+			transform: rotate(45deg);
+			left: 25%;
+			bottom: 35%;
+		}
+
+		span:nth-child(2) {
+			display: block;
+			position: absolute;
+			transform: rotate(-45deg);
+			left: 45%;
+			bottom: 35%;
+		}
+
+		span:nth-child(3) {
+			display: block;
+			position: absolute;
+			transform: rotate(45deg);
+			left: 25%;
+			bottom: 54%;
+		}
+
+		span:nth-child(4) {
+			display: block;
+			position: absolute;
+			transform: rotate(-45deg);
+			left: 45%;
+			bottom: 54%;
+		}
+
+		.round:hover span:nth-child(1) {
+			transform: rotate(-135deg);
+		}
+
+		.round:hover span:nth-child(2) {
+			transform: rotate(135deg);
+		}
+
+		.round:hover span:nth-child(3) {
+			transform: rotate(225deg);
+		}
+
+		.round:hover span:nth-child(4) {
+			transform: rotate(-225deg);
+		}
+
+		.footer {
+			background: #000;
+			padding: 30px 0px;
+			font-family: 'Play', sans-serif;
+			text-align: center;
+		}
+
+		.footer .row {
+			width: 100%;
+			margin: 1% 0%;
+			padding: 0.6% 0%;
+			color: gray;
+			font-size: 0.8em;
+			text-decoration: none;
+			transition: 0.5s;
+			display: inline-block;
+			margin: 0px 30px;
+			font-size: 1em;
+		}
+
+		.footer .row:hover {
+			color: #fff;
+		}
+
+		.link {
+			scroll-margin-top: 81px;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="menu">
+		<ul>
+			<li><a href="#main_frame">Главная</a></li>
+			<li><a href="#my_books">Книги</a></li>
+			<li><a href="#about_author">Об авторе</a></li>
+			<li><a href="#rewards">Награды</a></li>
+			<li><a href="#review">Отзывы</a></li>
+			<li><a href="#shop">Магазин</a></li>
+		</ul>
+	</header>
+
+	<div id="main_frame">
+		<h1 id="title1">НАУЧНАЯ ФАНТАСТИКА И ФЭНТЕЗИ</h1>
+		<h2 id="title2">От молодого Новосибирского автора</h2>
+		<form action="https://www.litres.ru/author/olga-evgenevna-mastepan/" target="_blank">
+			<button class="styled" type="submit">Перейти в магазин</button>
+		</form>
+		<div class="center-con">
+			<a href="#my_books">
+				<div class="round">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+	<div class="link" id="my_books">
+		<h2 class="title">Книги</h2>
+		<table id="books">
+			<tr>
+				<th><img src="images/UniverseHeartCover.jpg" alt="Обложка книги 1"></th>
+				<th><img src="images/DeadAuthorCover.jpg" alt="Обложка книги 2"></th>
+				<th><img src="images/IntrestingStoryCover.jpg" alt="Обложка книги 3"></th>
+				<th><img src="images/13Cover.png" alt="Обложка книги 4"></th>
+			</tr>
+			<tr>
+				<td>
+					<p class="book_title">Сердце Вселенной</p>
+				</td>
+				<td>
+					<p class="book_title">Мёртвый автор</p>
+				</td>
+				<td>
+					<p class="book_title">Занимательная история</p>
+				</td>
+				<td>
+					<p class="book_title">13-ая</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="genre">Жанр: научная фантастика</p>
+					<p class="description"> Лисс много лет путешествует по всей вселенной. Она - одинокая странница,
+						привыкшая полагаться только на саму себя. Новые миры манят её своими тайнами и загадками.
+						Кажется, что она путешествует без цели, ради новых впечатлений и интересных встреч. Но это не
+						так. Одна давняя боль ведет её вперед и толкает в самые опасные бездны. Сможет ли Лисс
+						противостоять всем опасностям и найти ответы на свои вопросы?</p>
+				</td>
+				<td>
+					<p class="genre">Жанр: фэнтези</p>
+					<p class="description"> Лана мечтает однажды стать признанным, популярным писателем. Переживая
+						творческий кризис, она готова на всё в поисках вдохновения. В один момент ей подворачивается
+						невероятная возможность, о которой она прежде могла только мечтать. Вдохновение, как и
+						гениальная идея для будущего шедевра окажутся как никогда близко. Впрочем, у подобного
+						поразительного подарка судьбы есть своя особая цена. И это вовсе не деньги, не драгоценности или
+						чужое признание</p>
+				</td>
+				<td>
+					<p class="genre">Жанр: любовный роман</p>
+					<p class="description"> У студентки-отличницы Кейт нет времени на романы. Вся её жизнь проходит за
+						подготовкой к занятиям и даже подруга у неё всего одна – соседка по комнате в общежитии. Кейт
+						вполне довольна своей жизнью и даже гордится своей способностью ко всему подходить рассудительно
+						и рационально. Авантюры ей не свойственны. Но вся её устоявшаяся жизнь меняется одним, далеко не
+						прекрасным утром, когда Кейт просыпается не в своей постели…</p>
+				</td>
+				<td>
+					<p class="genre">Жанр: научная фантастика</p>
+					<p class="description"> Вы завидуете героиням книг и фильмов и мечтаете о приключениях? Кэрри своей
+						жизнью была вполне довольна, но эта жизнь в один миг перевернулась с ног на голову и закружила
+						её в водовороте событий, мало похожих на реальность. Кэрри предстоит узнать о том, что она
+						Избранная и от неё зависит судьба самой Вселенной и всех её обитателей.
+						Но Вселенная ли призвала её на помощь или это чей-то хитроумный план?</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div class="link" id="about_author">
+		<h2 class="title">Об авторе</h2>
+		<table id="author_table">
+			<tr>
+				<th rowspan="3">
+					<p class="author_name">Ольга Мастепан</p>
+					<p class="description"> Обо мне:</p>
+					<ul class="description">
+						<li>Я родилась в 2003 году, в городе Рубцовске (Алтайский край), однако позже переехала с
+							родителями в Новосибирск. </li>
+						<li>Ещё со школьных лет увлекалась литературным творчеством. Состояла в школьном творческом
+							объединении ЛИТО «Окно», где делилась своими первыми рассказами и стихотворениями.
+							Участвовала в литературном альманахе выпущенном ЛИТО «ОКНО», не только в качестве автора, но
+							и как художник-оформитель (занималась разработкой обложки и иллюстраций).</li>
+						<li>В 18 лет опубликовала свою первую книгу «Сердце Вселенной» на портале «ЛитРес» при поддержке
+							издательства Эксмо Digital.</li>
+						<li>Участвовала в литературных конкурсах, и в 2023 году моя книга «Мёртвый автор» вошла в
+							шортлист конкурса «ПродаМастер 2023», заняв 9 место в рейтинге. </li>
+						<li>На данный момент все мои книги доступны на портале «Призрачные миры», а их ознакомительные
+							бесплатные фрагменты можно найти на сайте «ПродаМан». </li>
+						<li>Помимо этого я иногда пишу «фанфики», которые можно прочитать бесплатно на портале «Ficbook»
+						</li>
+					</ul>
+				</th>
+				<th id="photo_table"><img id="author_photo" src="images/Me.JPG" alt="Портрет автора"></th>
+			</tr>
+			<tr>
+				<td>
+					<p class="book_title">Я в социальных сетях</p>
+				</td>
+			</tr>
+			<tr>
+				<td id="social-icons">
+					<a href="https://vk.com/quantum_moon" target="_blank">
+						<img src="images/VK.png" alt="Вконтакте">
+					</a>
+					<a href="https://t.me/LanaAidz" target="_blank">
+						<img src="images/TG.png" alt="Телеграм">
+					</a>
+					<a href="https://www.instagram.com/quantum_moon_?igsh=bThybm5xNG5yc2tq" target="_blank">
+						<img src="images/INST.png" alt="Инстаграм">
+					</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div class="link" id="rewards">
+		<h2 class="title">Награды</h2>
+		<table id="rewards_table">
+			<tr>
+				<th>
+					<p class="bubble_text">В 2023 году книга «Мёртвый автор» вошла в шортлист конкурса «ПродаМастер
+						2023»,
+						заняв 9 место в рейтинге.</p>
+				</th>
+				<th>
+					<p class="bubble_text">Книга «Занимательная история» входит в топ 100 любовных романов на портале
+						«Призрачные миры». </p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<img src="images/DeAAward.jpg" alt="Обложка награжденной книги 1">
+				</td>
+				<td>
+					<img src="images/IntrestingStoryCover.jpg" alt="Обложка награжденной книги 2">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="review">
+		<h2 id="titleRev">Отзывы</h2>
+		<table id="review_table">
+			<tr>
+				<th>
+					<p class="book_title">С портала «Литрес»</p>
+				</th>
+				<th>
+					<p class="book_title">С портала «Ficbook»</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<img class="review_img" src="images/Review1.PNG" alt="Отзыв 1">
+					<img class="review_img" src="images/Review2.PNG" alt="Отзыв 2">
+					<img class="review_img" src="images/Review3.PNG" alt="Отзыв 3">
+				</td>
+				<td>
+					<img class="review_img" src="images/Review4.PNG" alt="Отзыв 4">
+					<img class="review_img" src="images/Review5.PNG" alt="Отзыв 5">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="shop">
+		<h2 class="title">Магазин</h2>
+		<table id="shop_table">
+			<tr>
+				<th>
+					<div class="shop_block">
+						<img class="shop_pic" src="images/PM.png" alt="Иконка 1">
+						<p class="book_title">Призрачные Миры</p>
+						<ul class="description">
+							<li>Возможность поддержать автора</li>
+							<li>Книги представлены полностью и по выгодным ценам</li>
+							<li>Регулярно проводятся акции и скидки</li>
+							<li>Требуется регистрация</li>
+						</ul>
+						<form id="form_white" action="https://feisovet.ru/магазин/Мастепан-Ольга/" target="_blank">
+							<button class="shop_white" type="submit">Купить книги</button>
+						</form>
+					</div>
+				</th>
+				<th>
+					<div id="shop_shadow" class="shop_block">
+						<img class="shop_pic" src="images/Litres.png" alt="Иконка 2">
+						<p class="book_title">Литрес</p>
+						<ul class="description">
+							<li>Возможность поддержать автора</li>
+							<li>Книги представлены полностью и по выгодным ценам</li>
+							<li>Дополнительно представлены аудиоверсии книг</li>
+						</ul>
+						<form id="form_purple" action="https://www.litres.ru/author/olga-evgenevna-mastepan/"
+							target="_blank">
+							<button class="bubble_text" id="shop_purple" type="submit">Купить книги</button>
+						</form>
+					</div>
+				</th>
+				<th>
+					<div class="shop_block">
+						<img class="shop_pic" src="images/Proda.png" alt="Иконка 3">
+						<p class="book_title">ПродаМан</p>
+						<ul class="description">
+							<li>Возможность получить представление о книгах автора перед покупкой</li>
+							<li>На сайте можно прочитать отрывки из книг автора (первые несколько глав) – абсолютно
+								бесплатно</li>
+							<li>Регистрация для чтения не требуется</li>
+						</ul>
+						<form action="https://prodaman.ru/Olga-Mastepan/books?8a1bc189-241e-4dd8-b9dd-e724955d1f3f"
+							target="_blank">
+							<button class="shop_white" type="submit">Читать ознакомительные фрагменты</button>
+						</form>
+					</div>
+				</th>
+			</tr>
+		</table>
+	</div>
+
+	<footer>
+		<div class="footer">
+			<div class="row">
+				Olga Mastepan Copyright © 2024 - All rights reserved || Designed By: Mastepan O.E
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
